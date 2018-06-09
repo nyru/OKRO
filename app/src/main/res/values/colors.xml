@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="white">#FFFFFF</color>
+    <color name="loginbuttoncolor">#0267AB</color>
+    <color name="hintclr">#96afda</color>
 </resources>
