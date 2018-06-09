@@ -1,9 +1,11 @@
-package eswar.com.okro;
+package eswar.com.okro.Activities;
 
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import eswar.com.okro.R;
 
 public class SplashActivity extends AppCompatActivity {
     ///////hello

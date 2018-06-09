@@ -1,7 +1,6 @@
-package eswar.com.okro;
+package eswar.com.okro.Activities;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +12,10 @@ import com.viewpagerindicator.CirclePageIndicator;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import eswar.com.okro.R;
+import eswar.com.okro.Model.ViewImageModel;
+import eswar.com.okro.Adapters.ViewPagerAdapter;
 
 public class ViewPagerActivity extends AppCompatActivity {
     private static ViewPager mPager;
@@ -60,11 +63,11 @@ igv_next.setOnClickListener(new View.OnClickListener() {
 
     private void init() {
 
-        mPager = (ViewPager) findViewById(R.id.pager);
+        mPager = (ViewPager) findViewById(R.id.vp_pager);
         mPager.setAdapter(new ViewPagerAdapter(ViewPagerActivity.this,imageModelArrayList));
 
         CirclePageIndicator indicator = (CirclePageIndicator)
-                findViewById(R.id.indicator);
+                findViewById(R.id.cpi_indicators);
 
         indicator.setViewPager(mPager);
 

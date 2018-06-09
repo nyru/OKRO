@@ -1,4 +1,4 @@
-package eswar.com.okro;
+package eswar.com.okro.Model;
 
 public class ViewImageModel {
     private int image_drawable;

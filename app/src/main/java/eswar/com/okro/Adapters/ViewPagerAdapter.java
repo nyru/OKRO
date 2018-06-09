@@ -1,6 +1,5 @@
-package eswar.com.okro;
+package eswar.com.okro.Adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
@@ -9,9 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
+
+import eswar.com.okro.R;
+import eswar.com.okro.Model.ViewImageModel;
 
 /**
  * Created by SONU on 29/08/15.
@@ -46,7 +46,7 @@ public class ViewPagerAdapter extends PagerAdapter {
 
         assert imageLayout != null;
         final ImageView imageView = (ImageView) imageLayout
-                .findViewById(R.id.image);
+                .findViewById(R.id.igv_veiwpagerimage);
 
 
         imageView.setImageResource(imageModelArrayList.get(position).getImage_drawable());
