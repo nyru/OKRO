@@ -33,14 +33,14 @@ public class ViewPagerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_pager);
-//igv_next=findViewById(R.id.igv_next);
-//igv_next.setOnClickListener(new View.OnClickListener() {
-//    @Override
-//    public void onClick(View view) {
-//        Intent intent=new Intent(ViewPagerActivity.this,LoginActivity.class);
-//        startActivity(intent);
-//    }
-//});
+igv_next=findViewById(R.id.igv_next);
+igv_next.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Intent intent=new Intent(ViewPagerActivity.this,LoginActivity.class);
+        startActivity(intent);
+    }
+});
         imageModelArrayList = new ArrayList<>();
         imageModelArrayList = populateList();
 
@@ -109,12 +109,6 @@ public class ViewPagerActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 currentPage = position;
-                if(position==mPager.getAdapter().getCount()-1){
-                    //start next Activity
-
-                    Intent intent=new Intent(ViewPagerActivity.this,LoginActivity.class);
-                    startActivity(intent);
-                }
             }
 
             @Override

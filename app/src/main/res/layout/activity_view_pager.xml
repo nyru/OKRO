@@ -28,16 +28,18 @@
                     app:fillColor="#2581c0"
                     app:pageColor="#a7a6a6"
                     app:snap="false" />
-                <!--<ImageView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:id="@+id/igv_next"-->
-                    <!--android:gravity="bottom"-->
-                    <!--android:layout_alignParentBottom="true"-->
-                    <!--android:layout_marginLeft="100dp"-->
-                    <!--android:layout_marginRight="10dp"-->
-                    <!--android:background="@mipmap/forward"-->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/igv_next"
+                    android:gravity="bottom"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@mipmap/forward"
+                    android:layout_toRightOf="@id/cpi_indicators"
+                    android:layout_toEndOf="@id/cpi_indicators"
 
-                  <!--/>-->
+                  />
         </RelativeLayout>
 </RelativeLayout>
