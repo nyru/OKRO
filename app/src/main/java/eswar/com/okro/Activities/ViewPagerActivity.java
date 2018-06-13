@@ -86,7 +86,7 @@ igv_next.setOnClickListener(new View.OnClickListener() {
                 if (currentPage == NUM_PAGES) {
                     currentPage = 0;
 //                   onPause();
-//                    Intent i = new Intent(ViewPagerActivity.this, LoginActivity.class);
+//                    Intent i = farmeraweek Intent(ViewPagerActivity.this, LoginActivity.class);
 //                    startActivity(i);
 //                    finish();
                 }
