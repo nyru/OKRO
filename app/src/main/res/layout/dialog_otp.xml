@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:textSize="20sp"
+        android:layout_marginTop="5dp"
+        android:hint="Enter OTP"
+        android:focusable="true"
+        android:layout_margin="15dp"
+        android:inputType="textPassword"
+        android:textStyle="bold"
+        android:textColorHint="@color/hintclr"
+        android:paddingLeft="10dp"
+        android:textColor="@color/hintclr"
+        android:id="@+id/ed_enterotp"
+        android:background="@drawable/rectangle"/>
+
+</LinearLayout>

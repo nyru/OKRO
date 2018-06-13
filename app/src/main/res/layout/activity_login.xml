@@ -28,6 +28,7 @@
     android:textSize="20sp"
     android:textColor="@color/hintclr"
     android:hint="First name"
+    android:focusable="true"
     android:inputType="text"
     android:textStyle="bold"
     android:textColorHint="@color/hintclr"
@@ -64,20 +65,7 @@
         android:paddingLeft="10dp"
         android:id="@+id/ed_mobilenumber"
         android:background="@drawable/rectangle"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_weight="1"
-        android:textSize="20sp"
-        android:layout_marginTop="5dp"
-        android:hint="Enter OTP"
-        android:inputType="textPassword"
-        android:textStyle="bold"
-        android:textColorHint="@color/hintclr"
-        android:paddingLeft="10dp"
-        android:textColor="@color/hintclr"
-        android:id="@+id/ed_enterotp"
-        android:background="@drawable/rectangle"/>
+
 
 
 
