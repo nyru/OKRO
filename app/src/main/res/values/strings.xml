@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">OKRO</string>
     <string name="Rs">\u20B9</string>
+
+    <string-array name="category">
+    <item>vegetables</item>
+    <item>fruits</item>
+
+</string-array>
 </resources>
