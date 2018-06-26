@@ -22,7 +22,8 @@
         <activity android:name=".Activities.LoginActivity" />
         <activity android:name=".Activities.DashBoardActivity" />
         <activity android:name=".Activities.ProfileActivity" />
-        <activity android:name=".Activities.BasketActivity"></activity>
+        <activity android:name=".Activities.BasketActivity" />
+        <activity android:name=".Activities.CartActivity"></activity>
     </application>
 
 </manifest>

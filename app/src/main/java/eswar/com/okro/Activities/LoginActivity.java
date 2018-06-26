@@ -35,7 +35,7 @@ TextView tv_openbasket;
             public void beforeTextChanged(CharSequence s, int start, int count, int after){}
             public void onTextChanged(CharSequence s, int start, int before, int count){}
         });
-        ed_enterotp=findViewById(R.id.ed_enterotp);
+
         tv_openbasket=findViewById(R.id.tv_openbasket);
        imm = (InputMethodManager)
                 getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -51,15 +51,12 @@ TextView tv_openbasket;
 
             @Override
             public void onClick(View arg0) {
-                // TODO Auto-generated method stub
+
                 if (ed_firstname.getText().toString().length() == 0) {
                     ed_firstname.setError("Enter First Name");
                     ed_firstname.requestFocus();
                 }
-                if (ed_lastname.getText().toString().length() == 0) {
-                    ed_lastname.setError("Enter Last Name");
-                    ed_lastname.requestFocus();
-                }
+
 
                 if (ed_mobilenumber.getText().toString().length() == 0 )
                 {
@@ -88,9 +85,15 @@ TextView tv_openbasket;
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
-                Intent intent=new Intent(LoginActivity.this,DashBoardActivity.class);
-                startActivity(intent);
+
+
+                    Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
+                    Intent intent=new Intent(LoginActivity.this,DashBoardActivity.class);
+                    startActivity(intent);
+
+
+
+
 
             }
         });

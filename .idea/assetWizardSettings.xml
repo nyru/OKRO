@@ -34,10 +34,9 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="backgroundColor" value="873eff" />
                                       <entry key="iconShape" value="NONE" />
-                                      <entry key="imageAsset" value="C:\Users\ESWARI\Downloads\icons8-back-48.png" />
-                                      <entry key="outputName" value="back" />
+                                      <entry key="imageAsset" value="C:\Users\ESWARI\Downloads\icons8-rupee-64.png" />
+                                      <entry key="outputName" value="rupee" />
                                     </map>
                                   </option>
                                 </PersistentState>

@@ -3,8 +3,16 @@
     <string name="Rs">\u20B9</string>
 
     <string-array name="category">
-    <item>vegetables</item>
-    <item>fruits</item>
+        <item>vegetables</item>
+        <item>fruits</item>
 
-</string-array>
+    </string-array>
+    <string name="nice_html">
+<![CDATA[
+<p>The prices shown are indicative prices.As
+ we harvest the produce on saturday after
+ your place your order, the final may vary
+slightly based on what we pay for farmers</p>
+]]>
+</string>
 </resources>
