@@ -17,7 +17,7 @@ public class BasketAdapter extends RecyclerView.Adapter<BasketAdapter.MyViewHold
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView itemname,weight,price,itemsno;
         ImageView  itempic,plus,minus;
-
+int count=0;
         public MyViewHolder(View view) {
             super(view);
             itemname = (TextView) view.findViewById(R.id.from_name);
@@ -27,6 +27,20 @@ public class BasketAdapter extends RecyclerView.Adapter<BasketAdapter.MyViewHold
             itempic=view.findViewById(R.id.list_image);
             plus=view.findViewById(R.id.cart_plus_img);
             minus=view.findViewById(R.id.cart_minus_img);
+            plus.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    count++;
+                    itemsno.setText(String.valueOf(count));
+                }
+            });
+            minus.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    count--;
+                    itemsno.setText(String.valueOf(count));
+                }
+            });
         }
     }
     public BasketAdapter(List<BasketitemsModel> basketitemsModelList) {
@@ -40,15 +54,16 @@ public class BasketAdapter extends RecyclerView.Adapter<BasketAdapter.MyViewHold
         return new MyViewHolder(itemView);
     }
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(final MyViewHolder holder, int position) {
         BasketitemsModel basketitemsModel = basketitemsModelList.get(position);
+        final int[] count = {0};
         holder.itempic.setImageResource(basketitemsModel.getItempic());
         holder.itemname.setText(basketitemsModel.getItemname());
         holder.price.setText(basketitemsModel.getPrice());
         holder.weight.setText(basketitemsModel.getWeight());
-        holder.minus.setImageResource(basketitemsModel.getMinus());
+
         holder.itemsno.setText(basketitemsModel.getItemsno());
-        holder.plus.setImageResource(basketitemsModel.getPlus());
+
 
 
     }

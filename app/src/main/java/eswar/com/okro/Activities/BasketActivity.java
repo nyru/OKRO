@@ -1,56 +1,51 @@
 package eswar.com.okro.Activities;
 
 import android.app.AlertDialog;
+
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
-import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import eswar.com.okro.Adapters.BasketAdapter;
 import eswar.com.okro.Adapters.CustomSpinnerAdapter;
-import eswar.com.okro.Model.BasketitemsModel;
+import eswar.com.okro.Fragments.FruitsFragment;
+import eswar.com.okro.Fragments.LeafyVegetablesFragment;
+import eswar.com.okro.Fragments.VegetableFragment;
 import eswar.com.okro.R;
 
 public class BasketActivity extends AppCompatActivity {
     private Toolbar toolbar;
 
     private Spinner spinner_nav;
-    private List<BasketitemsModel> basketitemsModelList = new ArrayList<>();
-    private RecyclerView recyclerView;
-    private BasketAdapter basketAdapter;
+    private AppCompatDelegate delegate;
+FrameLayout frameLayout1,frameLayout2,frameLayout3;
 TextView tv_pausebasket,tv_confirmbasket;
-
+    private String[] category=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basket);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         spinner_nav = (Spinner) findViewById(R.id.spinner_nav);
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-tv_pausebasket=findViewById(R.id.tv_pausebasket);
-tv_confirmbasket=findViewById(R.id.tv_confirmbasket);
-        basketAdapter = new BasketAdapter(basketitemsModelList);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(basketAdapter);
+
+        tv_pausebasket=findViewById(R.id.tv_pausebasket);
+        tv_confirmbasket=findViewById(R.id.tv_confirmbasket);
+frameLayout1=findViewById(R.id.fragments);
+frameLayout2=findViewById(R.id.fragments1);
+frameLayout3=findViewById(R.id.fragments2);
 tv_confirmbasket.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
@@ -69,7 +64,7 @@ tv_confirmbasket.setOnClickListener(new View.OnClickListener() {
             // Get the custom alert dialog view widgets reference
             Button btn_negative = (Button) dialogView.findViewById(R.id.dialog_neutral_btn);
             final Button btn_neutral = (Button) dialogView.findViewById(R.id.dialog_negative_btn);
-TextView tv_dialogtext=dialogView.findViewById(R.id.dialog_tv);
+            TextView tv_dialogtext=dialogView.findViewById(R.id.dialog_tv);
             tv_dialogtext.setText(Html.fromHtml(getString(R.string.nice_html)));
 
 
@@ -130,10 +125,10 @@ TextView tv_dialogtext=dialogView.findViewById(R.id.dialog_tv);
     // add items into spinner dynamically
     public void addItemsToSpinner() {
 
-        ArrayList<String> list = new ArrayList<String>();
-        list.add("vegetables");
-        list.add("fruits");
-
+        final ArrayList<String> list = new ArrayList<String>();
+        list.add("Vegetables");
+        list.add("Leafy Vegetables");
+        list.add("Fruits");
         CustomSpinnerAdapter spinAdapter = new CustomSpinnerAdapter(
                 getApplicationContext(), list);
 
@@ -147,76 +142,59 @@ TextView tv_dialogtext=dialogView.findViewById(R.id.dialog_tv);
                 // On selecting a spinner item
                 String item = adapter.getItemAtPosition(position).toString();
 
-                // Showing selected spinner item
-               switch (position)
-               {
-                   case  0:adapter.getItemAtPosition(0);
+                FragmentTransaction ft,ft1;
+                switch (position) {
 
-                       additemsvegetables();
-                   break;
+                    case 0:
 
-                   case 1:adapter.getItemAtPosition(1);
-                   additemsfruits();
-                   break;
-               }
+                       frameLayout1.setVisibility(View.VISIBLE);
+                       frameLayout2.setVisibility(View.INVISIBLE);
+                       frameLayout3.setVisibility(View.INVISIBLE);
+                        ft = getSupportFragmentManager().beginTransaction();
+                        ft.replace(R.id.fragments, new VegetableFragment());
+                        ft.commit();
 
-                Toast.makeText(getApplicationContext(), "Selected  : " + item,
-                        Toast.LENGTH_LONG).show();
+                        break;
+                    case 1:
+                        frameLayout2.setVisibility(View.VISIBLE);
+                        frameLayout1.setVisibility(View.INVISIBLE);
+                        frameLayout3.setVisibility(View.INVISIBLE);
+                        ft1 = getSupportFragmentManager().beginTransaction();
+                        ft1.replace(R.id.fragments1, new LeafyVegetablesFragment());
+
+                        ft1.commit();
+                        break;
+                    case 2:
+                        frameLayout3.setVisibility(View.VISIBLE);
+                        frameLayout1.setVisibility(View.INVISIBLE);
+                        frameLayout2.setVisibility(View.INVISIBLE);
+                        ft1 = getSupportFragmentManager().beginTransaction();
+                        ft1.replace(R.id.fragments2, new FruitsFragment());
+                        ft1.commit();
+                        break;
+
+                }
+//                FragmentTransaction ft;
+//                if(position==0){
+//                    ft = getSupportFragmentManager().beginTransaction();
+//                    ft.replace(R.id.fragments, new VegetableFragment());
+//                    ft.commit();
+//                }
+//                 if(position==1){
+//
+//                    ft = getSupportFragmentManager().beginTransaction();
+//                    ft.replace(R.id.fragments, new LeafyVegetablesFragment());
+//                    ft.commit();
+//                }
+//            }
+
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> arg0) {
-               
+
 
             }
         });
-    }
-    public void additemsvegetables(){
-        BasketitemsModel basketitemsModel = new BasketitemsModel(R.drawable.onions, "onion", "200","1kg",R.mipmap.minus,"1",R.mipmap.plus);
-        basketitemsModelList.add(basketitemsModel);
-        basketitemsModel = new BasketitemsModel(R.drawable.potato, "Potato", "200","1kg",R.mipmap.minus,"1",R.mipmap.plus);
-        basketitemsModelList.add(basketitemsModel);
-        basketitemsModel = new BasketitemsModel(R.drawable.ridgegourd, "Ridge Gourd", "200","1kg",R.mipmap.minus,"1",R.mipmap.plus);
-        basketitemsModelList.add(basketitemsModel);
-        basketitemsModel = new BasketitemsModel(R.drawable.onions, "onion", "200","1kg",R.mipmap.minus,"1",R.mipmap.plus);
-        basketitemsModelList.add(basketitemsModel);
-        basketitemsModel = new BasketitemsModel(R.drawable.potato, "Potato", "200","1kg",R.mipmap.minus,"1",R.mipmap.plus);
-        basketitemsModelList.add(basketitemsModel);
-        basketitemsModel = new BasketitemsModel(R.drawable.ridgegourd, "Ridge Gourd", "200","1kg",R.mipmap.minus,"1",R.mipmap.plus);
-        basketitemsModelList.add(basketitemsModel);
-        basketitemsModel = new BasketitemsModel(R.drawable.onions, "onion", "200","1kg",R.mipmap.minus,"1",R.mipmap.plus);
-        basketitemsModelList.add(basketitemsModel);
-        basketitemsModel = new BasketitemsModel(R.drawable.potato, "Potato", "200","1kg",R.mipmap.minus,"1",R.mipmap.plus);
-        basketitemsModelList.add(basketitemsModel);
-        basketitemsModel = new BasketitemsModel(R.drawable.ridgegourd, "Ridge Gourd", "200","1kg",R.mipmap.minus,"1",R.mipmap.plus);
-        basketitemsModelList.add(basketitemsModel);
 
-        basketAdapter.notifyDataSetChanged();
-    }
-    public void additemsfruits(){
-        BasketitemsModel basketitemsModel = new BasketitemsModel(R.drawable.ic_basket, "Apple", "200","1kg",R.drawable.ic_minus,"1",R.drawable.ic_plus);
-        basketitemsModelList.add(basketitemsModel);
-        basketitemsModel = new BasketitemsModel(R.drawable.ic_basket, "Apple", "200","1kg",R.drawable.ic_minus,"1",R.drawable.ic_plus);
-        basketitemsModelList.add(basketitemsModel);
-        basketitemsModel = new BasketitemsModel(R.drawable.ic_basket, "Apple", "200","1kg",R.drawable.ic_minus,"1",R.drawable.ic_plus);
-        basketitemsModelList.add(basketitemsModel);
-        basketitemsModel = new BasketitemsModel(R.drawable.ic_basket, "Apple", "200","1kg",R.drawable.ic_minus,"1",R.drawable.ic_plus);
-        basketitemsModelList.add(basketitemsModel);
-        basketitemsModel = new BasketitemsModel(R.drawable.ic_basket, "Apple", "200","1kg",R.drawable.ic_minus,"1",R.drawable.ic_plus);
-        basketitemsModelList.add(basketitemsModel);
-        basketitemsModel = new BasketitemsModel(R.drawable.ic_basket, "Apple", "200","1kg",R.drawable.ic_minus,"1",R.drawable.ic_plus);
-        basketitemsModelList.add(basketitemsModel);
-        basketitemsModel = new BasketitemsModel(R.drawable.ic_basket, "Apple", "200","1kg",R.drawable.ic_minus,"1",R.drawable.ic_plus);
-        basketitemsModelList.add(basketitemsModel);
-        basketitemsModel = new BasketitemsModel(R.drawable.ic_basket, "Apple", "200","1kg",R.drawable.ic_minus,"1",R.drawable.ic_plus);
-        basketitemsModelList.add(basketitemsModel);
-        basketitemsModel = new BasketitemsModel(R.drawable.ic_basket, "Apple", "200","1kg",R.drawable.ic_minus,"1",R.drawable.ic_plus);
-        basketitemsModelList.add(basketitemsModel);
-        basketitemsModel = new BasketitemsModel(R.drawable.ic_basket, "Apple", "200","1kg",R.drawable.ic_minus,"1",R.drawable.ic_plus);
-        basketitemsModelList.add(basketitemsModel);
-        basketitemsModel = new BasketitemsModel(R.drawable.ic_basket, "Apple", "200","1kg",R.drawable.ic_minus,"1",R.drawable.ic_plus);
-        basketitemsModelList.add(basketitemsModel);
-
-        basketAdapter.notifyDataSetChanged();
     }
 }

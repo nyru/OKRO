@@ -2,16 +2,15 @@ package eswar.com.okro.Model;
 
 public class BasketitemsModel {
     String itemname, weight, price, itemsno;
-    int itempic, plus, minus;
+    int itempic;
 
-    public BasketitemsModel(int itempic,String itemname, String price, String  weight,int minus, String itemsno, int plus ) {
+    public BasketitemsModel(int itempic,String itemname, String price, String  weight, String itemsno ) {
         this.itempic = itempic;
         this.itemname = itemname;
         this.price = price;
         this.weight = weight;
-        this.minus = minus;
         this.itemsno = itemsno;
-        this.plus = plus;
+
 
     }
 
@@ -55,20 +54,7 @@ public class BasketitemsModel {
         this.itempic = itempic;
     }
 
-    public int getPlus() {
-        return plus;
-    }
 
-    public void setPlus(int plus) {
-        this.plus = plus;
-    }
 
-    public int getMinus() {
-        return minus;
-    }
-
-    public void setMinus(int minus) {
-        this.minus = minus;
-    }
 }
 
