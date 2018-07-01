@@ -11,6 +11,8 @@ import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -30,7 +32,6 @@ public class BasketActivity extends AppCompatActivity {
     private Toolbar toolbar;
 
     private Spinner spinner_nav;
-    private AppCompatDelegate delegate;
 FrameLayout frameLayout1,frameLayout2,frameLayout3;
 TextView tv_pausebasket,tv_confirmbasket;
     private String[] category=null;
@@ -174,19 +175,7 @@ tv_confirmbasket.setOnClickListener(new View.OnClickListener() {
                         break;
 
                 }
-//                FragmentTransaction ft;
-//                if(position==0){
-//                    ft = getSupportFragmentManager().beginTransaction();
-//                    ft.replace(R.id.fragments, new VegetableFragment());
-//                    ft.commit();
-//                }
-//                 if(position==1){
-//
-//                    ft = getSupportFragmentManager().beginTransaction();
-//                    ft.replace(R.id.fragments, new LeafyVegetablesFragment());
-//                    ft.commit();
-//                }
-//            }
+
 
             }
             @Override
@@ -197,4 +186,5 @@ tv_confirmbasket.setOnClickListener(new View.OnClickListener() {
         });
 
     }
+
 }

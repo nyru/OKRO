@@ -1,9 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+android:background="#ffffff"
     tools:context=".Activities.CartActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="4"
+        android:layout_margin="5dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:orientation="vertical">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Vegetables"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:textColor="#000000"
+    android:paddingLeft="10dp"
+    android:background="@drawable/rectgrey"/>
+<android.support.v7.widget.RecyclerView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/veg_recycler">
 
-</android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.RecyclerView>
+
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Leafy Vegetables"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:paddingLeft="10dp"
+            android:background="@drawable/rectgrey"/>
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/leafyveg_recycler">
+
+
+        </android.support.v7.widget.RecyclerView>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fruits"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:paddingLeft="10dp"
+            android:background="@drawable/rectgrey"/>
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fruits_recycler">
+
+
+        </android.support.v7.widget.RecyclerView>
+
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:layout_marginTop="50dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_pincode"
+                    android:textSize="25sp"
+                    android:layout_weight="0.5"
+                    android:textColor="@color/colorPrimary"
+                    android:text="Pin Code"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:paddingLeft="5dp"
+                    android:inputType="number"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/ed_pincode"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/rectanglee"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:layout_marginTop="5dp"
+                android:id="@+id/ll_address"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_address"
+                    android:textSize="25sp"
+                    android:layout_weight="0.5"
+                    android:textColor="@color/colorPrimary"
+                    android:text="Address"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:paddingLeft="5dp"
+                    android:inputType="text"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/ed_address"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/rectanglee"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:layout_marginTop="5dp"
+                android:id="@+id/ll_address1"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_address1"
+                    android:textSize="25sp"
+                    android:layout_weight="0.5"
+                    android:textColor="@color/colorPrimary"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:paddingLeft="5dp"
+                    android:inputType="text"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/ed_address1"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/rectanglee"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:layout_marginTop="5dp"
+                android:id="@+id/ll_address2"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_address2"
+                    android:textSize="25sp"
+                    android:layout_weight="0.5"
+                    android:textColor="@color/colorPrimary"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:paddingLeft="5dp"
+                    android:inputType="text"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/ed_address2"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/rectanglee"/>
+
+
+
+
+
+        </LinearLayout>
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_height="40dp"
+            android:text="Place Order"
+            android:id="@+id/tv_placeorder"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:background="@drawable/rect"/>
+    </LinearLayout>
+</ScrollView>

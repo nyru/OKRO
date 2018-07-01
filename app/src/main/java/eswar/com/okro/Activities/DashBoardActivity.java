@@ -34,20 +34,6 @@ igv_basket.setOnClickListener(new View.OnClickListener() {
 
 
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.pic:
-                Intent intent=new Intent(DashBoardActivity.this,ProfileActivity.class);
-                startActivity(intent);
-        }
-        return true;
-    }
+
 }
 
