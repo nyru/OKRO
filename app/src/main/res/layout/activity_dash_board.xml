@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
+
     tools:context=".Activities.DashBoardActivity">
 
         <android.support.v7.widget.Toolbar
@@ -19,8 +20,8 @@
 
             <ImageView
                 android:id="@+id/logo"
-                android:layout_width="74dp"
-                android:layout_height="32dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:src="@mipmap/header"
                 android:scaleType="fitCenter" />
@@ -46,8 +47,15 @@
 android:id="@+id/ll_images"
     android:orientation="horizontal"
     android:weightSum="3"
-    android:layout_margin="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="20dp"
     android:layout_below="@id/ll_farmeraweek">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="2"
+        android:orientation="vertical"
+        android:layout_weight="1">
 
 <ImageView
     android:layout_width="wrap_content"
@@ -55,21 +63,55 @@ android:id="@+id/ll_images"
     android:layout_weight="1"
     android:id="@+id/igv_direct"
     android:layout_marginRight="10dp"
-    android:src="@drawable/directfarmer"/>
+    android:src="@drawable/blue_farm"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Direct from the farmer"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="2"
+        android:orientation="vertical"
+        android:layout_weight="1">
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_marginRight="10dp"
         android:id="@+id/igv_harvest"
-        android:src="@drawable/harvest"/>
+        android:src="@drawable/leaficon"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Delivered within 24hrs of harvest"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="2"
+        android:orientation="vertical"
+        android:layout_weight="1">
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:id="@+id/igv_subscription"
-        android:src="@drawable/subscription"/>
-
+        android:src="@drawable/subscriptions"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Weekly subscription and on-time delivary."
+            android:textColor="@color/colorPrimary"
+            android:gravity="center"
+            android:layout_weight="1"/>
+    </LinearLayout>
 </LinearLayout>
 
 <LinearLayout
@@ -85,7 +127,7 @@ android:id="@+id/ll_images"
     android:layout_height="wrap_content"
     android:gravity="center"
     android:textStyle="bold"
-    android:textColor="#807f7f"
+    android:textColor="#000000"
     android:textSize="20sp"
     android:text="Your Basket"/>
 <LinearLayout
@@ -126,6 +168,7 @@ android:id="@+id/ll_images"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
             android:text="640"
+            android:gravity="center"
             android:textColor="@color/colorPrimary"
             android:textSize="25sp"
             android:id="@+id/tv_amount"/>
@@ -165,7 +208,7 @@ android:id="@+id/ll_images"
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
+    android:layout_marginTop="5dp"
     android:orientation="vertical">
 
     <ImageView

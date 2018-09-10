@@ -14,7 +14,7 @@ import android.widget.Toast;
 import eswar.com.okro.R;
 
 public class DashBoardActivity extends AppCompatActivity {
-ImageView igv_basket;
+ImageView igv_basket,igv_farmeraweek;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +24,14 @@ ImageView igv_basket;
         ActionBar actionBar=getSupportActionBar();
         actionBar.setTitle("");
         igv_basket=findViewById(R.id.igv_basket);
+        igv_farmeraweek=findViewById(R.id.igv_farmeraweek);
+igv_farmeraweek.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Intent intent=new Intent(DashBoardActivity.this,HarvestActivity.class);
+        startActivity(intent);
+    }
+});
 igv_basket.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {

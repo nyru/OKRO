@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+        <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:id="@+id/tv_veg_harvest"
+            android:text="POTATO"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:textColor="#000"
+            android:id="@+id/tv_time_harvest"
+            android:textSize="18sp"
+            android:text="09:00AM"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:layout_margin="5dp"
+            android:background="#000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:id="@+id/tv_date_harvest"
+            android:textSize="18sp"
+            android:text="15.08.2018"/>
+
+    </LinearLayout>
+
+</LinearLayout>
