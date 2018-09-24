@@ -28,13 +28,13 @@ TextView tv_openbasket;
         ed_firstname=findViewById(R.id.ed_firstname);
         ed_lastname=findViewById(R.id.ed_lastname);
         ed_mobilenumber=findViewById(R.id.ed_mobilenumber);
-        ed_mobilenumber.addTextChangedListener(new TextWatcher() {
-            public void afterTextChanged(Editable s) {
-                Validations.isPhoneNumber(ed_mobilenumber, false);
-            }
-            public void beforeTextChanged(CharSequence s, int start, int count, int after){}
-            public void onTextChanged(CharSequence s, int start, int before, int count){}
-        });
+//        ed_mobilenumber.addTextChangedListener(new TextWatcher() {
+//            public void afterTextChanged(Editable s) {
+//                Validations.isPhoneNumber(ed_mobilenumber, false);
+//            }
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after){}
+//            public void onTextChanged(CharSequence s, int start, int before, int count){}
+//        });
 
         tv_openbasket=findViewById(R.id.tv_openbasket);
        imm = (InputMethodManager)
@@ -51,6 +51,14 @@ TextView tv_openbasket;
 
             @Override
             public void onClick(View arg0) {
+                String mobile = ed_mobilenumber.getText().toString().trim();
+
+                if(mobile.isEmpty() || mobile.length() < 10){
+                    ed_mobilenumber.setError("Enter a valid mobile");
+                    ed_mobilenumber.requestFocus();
+                    return;
+                }
+
 
                 if (ed_firstname.getText().toString().length() == 0) {
                     ed_firstname.setError("Enter First Name");
@@ -58,15 +66,10 @@ TextView tv_openbasket;
                 }
 
 
-                if (ed_mobilenumber.getText().toString().length() == 0 )
-                {
-
-                    ed_mobilenumber.setError("Enter mobile number");
-                    ed_mobilenumber.requestFocus();
-
-
-                } else {
-                    openDialog();
+                else {
+                    Intent intent = new Intent(LoginActivity.this, VerifyPhoneActivity.class);
+                    intent.putExtra("mobile", mobile);
+                    startActivity(intent);
                 }
             }
 

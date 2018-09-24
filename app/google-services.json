@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "734094002079",
-    "firebase_url": "https://okro-48133.firebaseio.com",
-    "project_id": "okro-48133",
-    "storage_bucket": "okro-48133.appspot.com"
+    "project_number": "611567046917",
+    "firebase_url": "https://okroo-61466.firebaseio.com",
+    "project_id": "okroo-61466",
+    "storage_bucket": "okroo-61466.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:734094002079:android:ff3c28372b6023bf",
+        "mobilesdk_app_id": "1:611567046917:android:ff3c28372b6023bf",
         "android_client_info": {
           "package_name": "eswar.com.okro"
         }
       },
       "oauth_client": [
         {
-          "client_id": "734094002079-90ahqcpgegg2bs535s1q47kor89f02r5.apps.googleusercontent.com",
+          "client_id": "611567046917-eisao3tpgqousmgsi9p7i0dngene1q0e.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "eswar.com.okro",
@@ -23,13 +23,13 @@
           }
         },
         {
-          "client_id": "734094002079-rsv5jf51vqq301e9rg0ovverha3m8taq.apps.googleusercontent.com",
+          "client_id": "611567046917-4s4soegiei1gkji564e4bs5kdfnsf4av.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBR9RPVSKVvHCW-yIksPhz6nf0J1iwj94Q"
+          "current_key": "AIzaSyCImeIqPg9Cl8g6d8g4uaIkbNsxA0JW_xg"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "734094002079-rsv5jf51vqq301e9rg0ovverha3m8taq.apps.googleusercontent.com",
+              "client_id": "611567046917-4s4soegiei1gkji564e4bs5kdfnsf4av.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -27,7 +27,14 @@
         <activity android:name=".Activities.DashBoardActivity" />
         <activity android:name=".Activities.BasketActivity" />
         <activity android:name=".Activities.CartActivity" />
-        <activity android:name=".Activities.HarvestActivity"></activity>
+        <activity android:name=".Activities.HarvestActivity" />
+        <activity android:name=".Activities.VerifyPhoneActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
